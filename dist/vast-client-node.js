@@ -2717,6 +2717,7 @@ class Fetcher {
     let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     this.urlHandler = options.urlHandler || options.urlhandler || urlHandler;
     this.fetchingOptions = {
+      ...(options.fetchingOptions || {}),
       timeout: options.timeout || DEFAULT_TIMEOUT,
       withCredentials: Boolean(options.withCredentials)
     };
